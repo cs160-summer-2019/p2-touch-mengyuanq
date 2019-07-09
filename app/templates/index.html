@@ -85,6 +85,50 @@
 	</div>
 	<script>
 	  // your solution here
+    // pan 
+    var panBox = document.getElementById('pan-box');
+    var mc = new Hammer(panBox);
+    mc.on("panleft panright", function() {
+    panBox.style.backgroundColor = "orange";
+    panBox.textContent = "WOAH!";
+});
+    // swipe
+    var swBox = document.getElementById('swipe-box');
+    var mcsw = new Hammer(swBox);
+    mcsw.on("swipeleft swiperight", function() {
+    swBox.style.backgroundColor = "orange";
+    swBox.textContent = "SWOOP!";
+});
+     // tap
+    var tapBox = document.getElementById('tap-box');
+    var mct = new Hammer(tapBox);
+    mct.on("tap", function() {
+    tapBox.style.backgroundColor = "orange";
+    tapBox.textContent = "HUH?";
+});      
+       // press
+    var pressBox = document.getElementById('press-box');
+    var mcpr = new Hammer(pressBox);
+    mcpr.on("press", function() {
+    pressBox.style.backgroundColor = "orange";
+    pressBox.textContent = "LET GO!!";
+});
+     // pinch
+    var pinchBox = document.getElementById('pinch-box');
+    var mcpin = new Hammer(pinchBox);
+    mcpin.get('pinch').set({ enable: true });
+    mcpin.on("pinch", function() {
+    pinchBox.style.backgroundColor = "orange";
+    pinchBox.textContent = "OUCH!!";
+});
+    // rotate
+    var rotBox = document.getElementById('rotate-box');
+    var mcrot = new Hammer(rotBox);
+    mcrot.get('rotate').set({ enable: true });
+    mcrot.on("rotate", function() {
+    rotBox.style.backgroundColor = "orange";
+    rotBox.textContent = "I'M DIZZZY!!";
+});
   </script>
 </body>
 </html>
